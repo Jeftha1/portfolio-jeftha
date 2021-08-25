@@ -65,7 +65,7 @@
 				<h4>{{$row->username}}</h4>
 				<h6>{{date('d-m-Y', strtotime($row->created_at))}}</h6>
 				<p>{{$row->description}}</p>
-				@if($logged_in == 1 && $usermail == "test@mail.com")
+				@if($logged_in == 1 && $usermail == "j.vaneunen1@gmail.com")
 				<?php echo '<a href="removemessage/', urlencode($row->id),'">Verwijder</a>';?>
 				@endif
 			</div>
