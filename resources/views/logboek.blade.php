@@ -21,7 +21,7 @@
 
 <!-- PHP om te controleren of de gebruiker is ingelogd (admin) -->
 <?php 
-	if (Auth::check()){$logged_in = 1 && $user = Auth::user()->name;}else{$logged_in = 0;}
+	if (Auth::check()){$logged_in = 1; $usermail = Auth::user()->email; $user = Auth::user()->name;}else{$logged_in = 0;}
 ?>
 
 <div style="margin: auto; max-width: 50%; height: auto; text-align: center;">
@@ -51,7 +51,7 @@
 	@endif
 	</form>
 	@if($logged_in == 0)
-	<p style="color: orange;"><i><b><a href="{{url('login')}}">Log in</a> om een bericht te plaatsen. <br>De Admin (Jeftha) kan berichten verwijderen.</p></i></b>
+	<p style="color: orange;"><i><b><a href="{{url('login')}}">Log in</a> om een bericht te plaatsen. <br>De Admin kan berichten verwijderen.</p></i></b>
 	@endif
 </div>
 <br>
@@ -65,7 +65,7 @@
 				<h4>{{$row->username}}</h4>
 				<h6>{{date('d-m-Y', strtotime($row->created_at))}}</h6>
 				<p>{{$row->description}}</p>
-				@if($logged_in == 1 && $user == "Jeftha")
+				@if($logged_in == 1 && $usermail == "test@mail.com")
 				<?php echo '<a href="removemessage/', urlencode($row->id),'">Verwijder</a>';?>
 				@endif
 			</div>

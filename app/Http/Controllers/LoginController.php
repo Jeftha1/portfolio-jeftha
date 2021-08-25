@@ -13,7 +13,7 @@ class LoginController extends Controller
 
     public function login(Request $req){
         $validated = $req->validate([
-            'name' => 'required',
+            'email' => 'required',
             'password' => 'required' 
         ]); 
 

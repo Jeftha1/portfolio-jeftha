@@ -24,8 +24,8 @@
 
 	<form method="post" style="width: 50%;margin: auto; text-align: center;">
 		@csrf
-		<input type="text" name="name" placeholder="Gebruikersnaam">
-		@error('name')
+		<input type="email" name="email" placeholder="Email">
+		@error('email')
 		<span>{{$message}}</span>
 		@enderror
 		<br>
