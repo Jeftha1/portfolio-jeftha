@@ -96,7 +96,11 @@
 		</div>
 	@endforeach
 	<br><br><br>
-		{{$data->links('paginate', ['data'=>$data])}}
+		
+</div>
+<br>
+<div style="margin: auto; width: 75%; height: auto;">
+{{$data->links('paginate', ['data'=>$data])}}
 </div>
 <br><br>
 </div>
