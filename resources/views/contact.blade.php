@@ -10,6 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="icon" href="{{url('images/portfolio.ico')}}" type="image/icon type">
+    <style>
+    </style>
 </head>
 <body>
 
@@ -75,9 +77,9 @@
 </div>
 <br>
 
-<div style="position: absolute; bottom: 0; width: 100%;">
+<br><br><br><br><br><br>
 @include('footer')
-</div>
+
 
 </body>
 </html>

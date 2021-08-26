@@ -10,6 +10,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="icon" href="{{url('images/portfolio.ico')}}" type="image/icon type">
+    <style>
+    body{
+    	display:  flex;
+    	flex-direction:  column;
+    }
+    footer{
+    	margin-top:  auto;
+    }
+	</style>
 </head>
 <body>
 
@@ -57,7 +66,7 @@
 <br>
 
 <!-- div met berichten waar in de toekomst nog een upvote en sort aan toegevoegd kan worden -->
-<div style="margin: auto; max-width: 75%; height: auto;">
+<div style="margin: auto; width: 75%; height: auto;">
 	<h2 style="text-align: center;">Berichten</h2>
 	@foreach($data as $row)
 	<div class="card1">
@@ -80,7 +89,7 @@
 </div>
 
 <br><br>
-<div style="position: absolute; bottom: 0; width: 100%; margin-top: 48px; height: 2.5rem;">
+<div>
 @include('footer')
 </div>
 
