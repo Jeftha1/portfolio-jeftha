@@ -18,6 +18,20 @@
     footer{
     	margin-top:  auto;
     }
+    @media screen and (max-width:  820px){
+	  	.card1 {
+	    width:  100%; 
+	    float:  none;
+	  	}
+	  	.container1 {
+	  		width:  100%;
+	  		float:  none;
+	  	}
+	  	.cardcontainer{
+	  		width:  100%; 
+	  		float:  none;
+	  	}
+	}
 	</style>
 </head>
 <body>
@@ -66,7 +80,7 @@
 <br>
 
 <!-- div met berichten waar in de toekomst nog een upvote en sort aan toegevoegd kan worden -->
-<div style="margin: auto; width: 75%; height: auto;">
+<div class="cardcontainer" style="margin: auto; width: 75%; height: auto;">
 	<h2 style="text-align: center;">Berichten</h2>
 	@foreach($data as $row)
 	<div class="card1">
