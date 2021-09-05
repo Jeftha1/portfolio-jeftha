@@ -28,7 +28,7 @@
     }
     .carousel-item{
         background-color:  white;
-        height:  627px;
+        height:  650px;
     }
     </style>
 </head>
