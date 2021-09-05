@@ -41,9 +41,10 @@
 		<br><br>
 	</form>
 
-<div style="position: absolute; bottom: 0; width: 100%;">
+<br><br><br><br><br><br>
 @include('footer')
-</div>
+
+
 
 </body>
 </html>
