@@ -4,10 +4,10 @@
          $url = "https://";   
     else  
          $url = "http://";   
-    // Append the host(domain name, ip) to the URL. Voeg de host (domein naam) toe aan de URL
+    // Voeg de host (domein naam) toe aan de URL
     $url.= $_SERVER['HTTP_HOST'];   
     
-    // Append the requested resource location to the URL Voeg de gevraagde resource location aan de URL toe
+    // Voeg de gevraagde resource location aan de URL toe
     $url.= $_SERVER['REQUEST_URI'];    
     
     //explode de URL en neem het laatste deel daarvan (de active page)  
