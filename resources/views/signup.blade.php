@@ -48,7 +48,8 @@
 	</form>
 
 <br><br><br><br><br><br>
+<div style="margin-top: 140px;">
 @include('footer')
-
+</div>
 </body>
 </html>
