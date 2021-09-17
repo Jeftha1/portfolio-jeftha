@@ -26,7 +26,7 @@
 <div class="topnav" id="myTopnav">
 	<a  <?php if (end($pieces) == ""){echo 'class="activenav"';}?> href="{{url('/')}}">Profiel </a>
 	<a  <?php if (end($pieces) == "motivatie"){echo 'class="activenav"';}?> href="{{url('motivatie')}}">Motivatie </a>
-	<a  <?php if (end($pieces) == "logboek" || str_contains($pieces[5], 'logboek')){echo 'class="activenav"';}?> href="{{url('logboek')}}">Logboek </a>
+	<a  <?php if (end($pieces) == "logboek" || str_contains(end($pieces), 'logboek')){echo 'class="activenav"';}?> href="{{url('logboek')}}">Logboek </a>
 	<a  <?php if (end($pieces) == "contact"){echo 'class="activenav"';}?> href="{{url('contact')}}">Contact </a>
      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
