@@ -28,7 +28,12 @@
     }
     .carousel-item{
         background-color:  white;
-        height:  650px;
+        height:  610px;
+    }
+    @media screen and (max-width: 520px){
+        .carousel-item{
+            height:  720px;
+        }
     }
     </style>
 </head>

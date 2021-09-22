@@ -11,6 +11,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="icon" href="{{url('images/portfolio.ico')}}" type="image/icon type">
     <style>
+    @media screen and (max-width:  750px){
+        .namefield{
+            margin-bottom:  10px;
+        }
+    }
     </style>
 </head>
 <body>
@@ -22,7 +27,6 @@
 @include('header')
 
 <!-- Contact form -->
-<!-- Nog doen: vul form action in op line 31 -->
 <div class="row" style="max-width: 90%; margin: auto; ">
 	<div class="column">
 <section class="mb-4" >
@@ -37,11 +41,15 @@
 
                 <div class="row">
                     <div class="col-md-6">
+                        <div class="namefield">
                             <input type="text" id="name" name="name" class="form-control" placeholder="Je naam" required>
+                        </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-6" >
+                        <div>    
                             <input type="text" id="email" name="email" class="form-control" placeholder="Je email" required>
+                        </div>
                     </div>
                 </div>
                 <br>

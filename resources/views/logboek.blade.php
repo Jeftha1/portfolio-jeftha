@@ -22,6 +22,7 @@
 	  	.card1 {
 	    width:  100%; 
 	    float:  none;
+	    margin-bottom:  20px;
 	  	}
 	  	.container1 {
 	  		width:  100%;

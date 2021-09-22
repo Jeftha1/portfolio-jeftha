@@ -31,8 +31,7 @@
 			<p>Mijn naam is Jeftha van Eunen. Ik ben een 22-jarige, pas afgestudeerde masterstudent 
 			geschiedenis met een minor in informatiekunde. Hoewel ik geschiedenis heb gestudeerd ben ik 
 			al van jongs af aan geïnteresseerd in computers. Daarom heb ik een minor in informatiekunde 
-			gevolgd. Hierdoor kwam ik erachter dat ik het erg leuk vind om met computers en 
-			computertalen te werken. Via de minor heb ik kennis opgedaan van HTML, CSS, MySQL, 
+			gevolgd. Via de minor heb ik kennis opgedaan van HTML, CSS, MySQL, 
 			PHP, Python, XML en Bootstrap. Later heb ik door zelfstudie de basisprincipes van JavaScript, 
 			jQuery en JSON geleerd en op dit moment ben ik mezelf aan het verdiepen in Laravel (waar ik deze website mee heb gemaakt).</p>
 		</div>
@@ -41,17 +40,27 @@
 			<p>Wat ik leuk vind aan programmeren is dat je er praktische systemen mee kunt maken die 
 			dagelijks met gemak gebruikt kunnen worden. Het proces van het analyseren van een probleem 
 			of situatie, daar een oplossing voor vinden en dat vervolgens met computertalen omzetten in
-			een website is iets dat ik ontzettend leuk vind. Op <a href="https://efka-infosysteem.000webhostapp.com" target="blank">deze website</a> 
+			een website is iets dat ik ontzettend leuk vind.</p> 
+			<p>Op <a href="https://efka-infosysteem.000webhostapp.com" target="blank">deze website</a> 
 			kunt u een voorbeeld zien van een website die ik heb gemaakt. Het gaat om een website waarop 3 soorten gebruikers (
 			schoonmakers, klanten en Efka, het schoonmaakbedrijf) elkaar berichten kunnen sturen en waarbij schoonmakers in kunnen klokken (met locatie).
 			<b>Inloggegevens voor <a href="https://efka-infosysteem.000webhostapp.com" target="blank">deze website</a>: </b><i>Gebruikersnaam klant</i>: TestKlant, <i>wachtwoord</i>: TK2021!. <i>Gebruikersnaam schoonmaker</i>: TestSchoonmaker, <i>wachtwoord</i>: TS2021!</p>
+			<div class="row">
+				<div class="col-sm-6">
+			<img src="{{url('images/klant.png')}}" alt="Klant efka-infosysteem" title="Klant" style="max-width: 100%;">
+				</div>
+				<div class="col-sm-6">
+			<img src="{{url('images/hendrik.png')}}" alt="Efka (admin) efka-infosysteem" title="Efka" style="max-width: 100%;">
+				</div>
+			</div>
 		</div>
-		<div class="card">
+
+		<div class='card'>
 			<h2>Doel</h2>
 			<p>Ik heb geen professionele ervaring op het gebied van webdevelopment maar wil mezelf hier 
-			graag verder in ontwikkelen. Daarom ben ik op dit moment op zoek naar een traineeship voor PHP backend programmeur. 
-			Het aantrekkelijke van een traineeship is denk ik de mogelijkheid om aan de slag te gaan als PHP programmeur zonder dat je 
-			daarvoor werkervaring nodig hebt. Ik ben een geschikte kandidaat hiervoor omdat ik al ervaring heb met PHP en een WO opleiding heb afgerond. 
+			graag verder in ontwikkelen. Daarom ben ik op dit moment op zoek naar een traineeship. 
+			Het aantrekkelijke van een traineeship is denk ik de mogelijkheid om aan de slag te gaan zonder dat je daarvoor werkervaring nodig hebt. 
+			Ik ben een geschikte kandidaat hiervoor omdat ik al ervaring heb met verschillende programmeertalen en een WO opleiding heb afgerond. 
 			Bovendien houd ik ervan om nauwkeurig te werken en ben ik in staat om snel zelfstandig kennis en inzichten op te nemen.</p>
 		</div>
 	</div>
@@ -72,13 +81,14 @@
 			<img src="{{url('images/python.jpg')}}" alt="Logo Python" title="Python" style="max-width: 15%; margin: 12px;">
 			<img src="{{url('images/composer.jpg')}}" alt="Logo Composer" title="Composer" style="max-width: 15%; margin: 12px;">
 		<br><br>
+
 		<h2>Ik ben geïnteresseerd in:</h2>
-		<img src="{{url('images/docker.png')}}" alt="Logo Docker" title="Docker" style="max-width: 15%; margin: 12px;">
-		<img src="{{url('images/aws.png')}}" alt="Logo AWS" title="AWS" style="max-width: 15%; margin: 12px;">
-		<img src="{{url('images/phpunit.png')}}" alt="Logo PHPUnit" title="PHPUnit" style="max-width: 15%; margin: 12px;">
-		<img src="{{url('images/wordpress.png')}}" alt="Logo WordPress" title="WordPress" style="max-width: 15%; margin: 12px;">
-		<img src="{{url('images/RESTAPI.png')}}" alt="Logo REST API" title="REST API" style="max-width: 15%; margin: 12px;">
-		<img src="{{url('images/scrum.png')}}" alt="Logo Scrum" title="Scrum" style="max-width: 15%; margin: 12px;">
+			<img src="{{url('images/docker.png')}}" alt="Logo Docker" title="Docker" style="max-width: 15%; margin: 12px;">
+			<img src="{{url('images/aws.png')}}" alt="Logo AWS" title="AWS" style="max-width: 15%; margin: 12px;">
+			<img src="{{url('images/phpunit.png')}}" alt="Logo PHPUnit" title="PHPUnit" style="max-width: 15%; margin: 12px;">
+			<img src="{{url('images/wordpress.png')}}" alt="Logo WordPress" title="WordPress" style="max-width: 15%; margin: 12px;">
+			<img src="{{url('images/RESTAPI.png')}}" alt="Logo REST API" title="REST API" style="max-width: 15%; margin: 12px;">
+			<img src="{{url('images/scrum.png')}}" alt="Logo Scrum" title="Scrum" style="max-width: 15%; margin: 12px;">
 	</div>
 
 </div>
