@@ -86,7 +86,7 @@
 {{$paginated->links('paginate-api', ['data'=>$paginated], ['count'=>$count])}}
 </div>
 
-<div style="margin: auto; width: 85%; height: auto; <?php if($count == 0){echo "margin-bottom:  300px;";}?>>
+<div style="margin: auto; width: 85%; height: auto; <?php if($count == 0){echo "margin-bottom:  300px;";}?>">
     <h2 style="text-align: center;">Er zijn {{$count}} vacatures gevonden voor de zoekopdracht '<i><?php if(isset($_GET['zoekopdracht'])){echo $_GET['zoekopdracht'];}else{echo "Geschiedenis";}?></i>' in de afgelopen 
         <?php 
         if(isset($_GET['zoekperiode']) && $_GET['zoekperiode'] >1){echo $_GET['zoekperiode']." dagen";}else{echo 'dag';}
