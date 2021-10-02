@@ -35,6 +35,10 @@
             height:  720px;
         }
     }
+    /* .wraparound {
+    background: rgb(238,174,226);
+background: radial-gradient(circle, rgba(238,174,226,1) 0%, rgba(148,233,228,1) 100%);
+    }*/
     </style>
 </head>
 <body>
@@ -46,6 +50,7 @@
 @include('header')
 
 <!-- Row met een korte beschrijving (profiel, vaardigheden en contact) -->
+<div class="wraparound">
 <div class="row" style="max-width: 90%; margin: auto; ">
 <div class="column">
     <h3>Profiel</h3>
@@ -203,6 +208,9 @@
 </div>
 
 <!-- wrapper voor de carousel (de tweede row van de layout)-->
+</div>
+
+<!-- div voor de gradient -->
 </div>
 
 @include('footer')

@@ -52,7 +52,7 @@
 	<h2>Deel hier je mening over deze website &#128526;</h2>
 	<br>
 
-	<!-- From met Summernote (voor in de toekomst) -->
+	<!-- Form (voeg Summernote er in de toekomst aan toe) -->
 	<div class="form-group">
 	<form method="post">
 		<div style="color: red;">
@@ -81,7 +81,7 @@
 <br>
 
 <!-- div met berichten waar in de toekomst nog een upvote en sort aan toegevoegd kan worden -->
-<div class="cardcontainer" style="margin: auto; width: 75%; height: auto;">
+<div class="cardcontainer" style="margin: auto; width: 85%; height: auto;">
 	<h2 style="text-align: center;">Berichten</h2>
 	@foreach($data as $row)
 	<div class="card1">

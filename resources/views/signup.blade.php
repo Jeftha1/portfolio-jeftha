@@ -26,24 +26,24 @@
 		@csrf
 		<input type="text" name="name" placeholder="Gebruikersnaam" required>
 		@error('name')
-		<span>{{$message}}</span>
+		<br><span>{{$message}}</span>
 		@enderror
 		<br>
 		<br>
 		<input type="email" name="email" placeholder="Email" required>
 		@error('name')
-		<span>{{$message}}</span>
+		<br><span>{{$message}}</span>
 		@enderror
 		<br>
 		<br>
 		<input type="password" name="password" placeholder="Wachtwoord" required>
 		@error('password')
-		<span>{{$message}}</span>
+		<br><span>{{$message}}</span>
 		@enderror
 		<br><br>
 		<input type="submit" value="Registreer">
 		<br><br>
-		<p class="small"><i>Heb je al een account? <a href="{{url('login')}}">Log dan hier in.</a></p></i>
+		<p class="small"><i>Heb je al een account? <br><a href="{{url('login')}}">Log dan hier in.</a></p></i>
 		<br><br>
 	</form>
 

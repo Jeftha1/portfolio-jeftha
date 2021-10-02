@@ -5,6 +5,7 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\LoginController; 
 use App\Http\Controllers\SignupController; 
 use App\Http\Controllers\LogoutController; 
+use App\Http\Controllers\PaginationController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,17 @@ Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'login']); 
 
 Route::get('logout', [LogoutController::class, 'logout']); 
+
+Route::get('vacature-scraper', function(){
+    return view('vacature-scraper'); 
+}); 
+
+Route::get('vacature-iframe', function(){
+    return view('vacature-iframe'); 
+}); 
+
+Route::get('vacature-api', [PaginationController::class, 'index']); 
+
+Route::get('testing-area', function(){
+    return view('testing-area');
+}); 

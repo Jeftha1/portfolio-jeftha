@@ -15,6 +15,6 @@
 <input style="margin-right:  6px;" class="float-right" type="button" value="<<"></a>
 <a href="{{url('logboek?page=1')}}">
 <input style="margin-right:  6px;" class="float-right" type="button" value="1"></a>
-<p style="margin-left: 18px;">Pagina {{$data->currentPage()}} van {{$pages}} </p>
+<p style="margin-left: 18px;">Pagina {{$data->currentPage()}} // {{$pages}} </p>
 
 @endif
