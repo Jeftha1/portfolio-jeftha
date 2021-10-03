@@ -69,6 +69,7 @@ $item = $html->find('div[id="mosaic-provider-jobcards"]',0);
 //Als er binnen de gestelde radius geen vacatures te vinden zijn, maar net daarbuiten wel, geeft Indeed deze vacatures weer. Om dit te voorkomen sla ik hier de boodschap daarvoor op en gebruik ik die var in onderstaande if-statement. 
 $outside_radius = $html->find('div[id="original_radius_result"]',0); 
 ?>
+
 <div style="margin: auto; width: 85%; height: auto;">
     <h2 style="text-align: center;">Vacatures {{$zoekopdracht}} afgelopen <?php if ($zoekperiode >1){echo $zoekperiode." dagen";}else{echo 'dag';}?></h2>
     <h5 style="text-align: center;">Deze pagina toont een aantal vacatures die gevonden zijn met een scraper op Indeed.com</h5>
@@ -130,6 +131,9 @@ $outside_radius = $html->find('div[id="original_radius_result"]',0);
 
 @else
     <br>
+    {{$item}}
+    {{"line....."}}
+    <?php if(isset($outside_item)){echo $outside_item;}?>
     <h3 style="text-align: center;">Sorry, er zijn op dit moment geen vacatures gevonden voor '<i>{{$zoekopdracht}}</i>' in de afgelopen <?php if ($zoekperiode >1){echo $zoekperiode." dagen";}else{echo 'dag';}?>.</h3><br>
     <div style="text-align: center !important; margin: auto !important;">
         <a href="{{url('vacature-scraper')}}" class="mx-auto"><button class="btn btn-primary" style="margin-bottom: 240px;">Keer terug</button></a>
