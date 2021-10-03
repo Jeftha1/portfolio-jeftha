@@ -76,7 +76,7 @@ if(isset($_GET['zoekperiode'])){
 
 <form action="#" name="keyword" style="text-align: center;">
     <label for="zoekopdracht">Zoekopdracht: </label>
-    <select id="zoekopdracht" name="zoekopdracht">
+    <select id="zoekopdracht" name="zoekopdracht" style="margin-bottom: 12px;">
         <option value="" selected disabled>  Kies een richting</option>
         <option value="Geschiedenis">  Geschiedenis</option>
         <option value="Historicus" >  Historicus</option>
@@ -97,14 +97,16 @@ if(isset($_GET['zoekperiode'])){
         <option value="Tekstschrijver" >  Tekstschrijver</option>
         <option value="PHP">  PHP</option>
     </select>
+    <br>
     <label for="zoekperiode">Plaatsingsdatum: </label>
-    <select id="zoekperiode" name="zoekperiode">
+    <select id="zoekperiode" name="zoekperiode" style="margin-bottom: 12px;">
         <option value="" selected disabled> Kies een periode</option>
         <option value="1"> 1 Dag</option>
         <option value="2"> 7 Dagen</option>
         <option value="3"> 30 Dagen</option>
     </select>
-    <input type="submit"><br><br>
+    <br>
+    <input type="submit" class="btn btn-primary"><br><br>
 </form>
 
 <iframe src="https://www.vacatures.nl/{{$zoekopdracht}}/8302bb/?query={{$zoekopdracht}}&location=8302BB&filters%5Bradius%5D=50&filters%5Bsince%5D={{$zoekperiode}}" style="margin: auto; width: 85%; height: 600px;"></iframe>

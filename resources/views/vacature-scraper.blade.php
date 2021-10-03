@@ -70,12 +70,6 @@ $item = $html->find('div[id="mosaic-provider-jobcards"]',0);
 $outside_radius = $html->find('div[id="original_radius_result"]',0); 
 ?>
 
-{{var_dump($html)}}
-{{"line...."}}
-{{var_dump($item)}}
-{{"line...."}}
-{{var_dump($outside_radius)}}
-
 <div style="margin: auto; width: 85%; height: auto;">
     <h2 style="text-align: center;">Vacatures {{$zoekopdracht}} afgelopen <?php if ($zoekperiode >1){echo $zoekperiode." dagen";}else{echo 'dag';}?></h2>
     <h5 style="text-align: center;">Deze pagina toont een aantal vacatures die gevonden zijn met een scraper op Indeed.com</h5>
