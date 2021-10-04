@@ -10,30 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="icon" href="{{url('images/portfolio.ico')}}" type="image/icon type">
-    <style>
-    body{
-    	display:  flex;
-    	flex-direction:  column;
-    }
-    footer{
-    	margin-top:  auto;
-    }
-    @media screen and (max-width:  820px){
-	  	.card1 {
-	    width:  100%; 
-	    float:  none;
-	    margin-bottom:  20px;
-	  	}
-	  	.container1 {
-	  		width:  100%;
-	  		float:  none;
-	  	}
-	  	.cardcontainer{
-	  		width:  100%; 
-	  		float:  none;
-	  	}
-	}
-	</style>
+    <link rel="stylesheet" type="text/css" href="{{url('css/logboek.css')}}">
 </head>
 <body>
 
@@ -61,22 +38,28 @@
 			@endforeach
 		</div>
 		@csrf
+
 		@if($logged_in == 1)
-		<input type="hidden" class="form-control" name="name" value="{{$user}}" required>
+			<input type="hidden" class="form-control" name="name" value="{{$user}}" required>
 		@endif
+
 	</div>
 	<div class="form-group">
 		<textarea class="form-control" rows="4" name="bericht" placeholder="Typ hier je bericht" required></textarea>
 	</div>
+	
 	@if($logged_in == 1)
 	<div class="form-group">
 		<input type="submit" class="btn btn-primary" value="Verzend">
 	</div>
 	@endif
+
 	</form>
+
 	@if($logged_in == 0)
-	<p style="color: orange;"><i><b><a href="{{url('login')}}">Log in</a> om een bericht te plaatsen. <br>De Admin kan berichten verwijderen.</p></i></b>
+		<p style="color: orange;"><i><b><a href="{{url('login')}}">Log in</a> om een bericht te plaatsen. <br>De Admin kan berichten verwijderen.</p></i></b>
 	@endif
+
 </div>
 <br>
 
@@ -89,9 +72,11 @@
 				<h4>{{$row->username}}</h4>
 				<h6>{{date('d-m-Y', strtotime($row->created_at))}}</h6>
 				<p>{{$row->description}}</p>
+				
 				@if($logged_in == 1 && $usermail == "j.vaneunen1@gmail.com")
-				<?php echo '<a href="removemessage/', urlencode($row->id),'">Verwijder</a>';?>
+					<?php echo '<a href="removemessage/', urlencode($row->id),'">Verwijder</a>';?>
 				@endif
+
 			</div>
 			<br>
 		</div>

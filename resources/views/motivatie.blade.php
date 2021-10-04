@@ -80,6 +80,8 @@
 			<img src="{{url('images/github.png')}}" alt="Logo GitHub" title="GitHub" style="max-width: 15%; margin: 12px;">
 			<img src="{{url('images/python.jpg')}}" alt="Logo Python" title="Python" style="max-width: 15%; margin: 12px;">
 			<img src="{{url('images/composer.jpg')}}" alt="Logo Composer" title="Composer" style="max-width: 15%; margin: 12px;">
+			<img src="{{url('images/scrum.png')}}" alt="Logo Scrum" title="Scrum" style="max-width: 15%; margin: 12px;">
+			<img src="{{url('images/uml.png')}}" alt="Logo UML" title="UML" style="max-width: 15%; margin: 12px;">
 		<br><br>
 
 		<h2>Ik ben geïnteresseerd in:</h2>
@@ -88,7 +90,11 @@
 			<img src="{{url('images/phpunit.png')}}" alt="Logo PHPUnit" title="PHPUnit" style="max-width: 15%; margin: 12px;">
 			<img src="{{url('images/wordpress.png')}}" alt="Logo WordPress" title="WordPress" style="max-width: 15%; margin: 12px;">
 			<img src="{{url('images/RESTAPI.png')}}" alt="Logo REST API" title="REST API" style="max-width: 15%; margin: 12px;">
-			<img src="{{url('images/scrum.png')}}" alt="Logo Scrum" title="Scrum" style="max-width: 15%; margin: 12px;">
+			<img src="{{url('images/heroku.png')}}" alt="Logo Heroku" title="Heroku" style="max-width: 15%; margin: 12px;">
+			<img src="{{url('images/vuejs.png')}}" alt="Logo Vue.js" title="Vue.js" style="max-width: 15%; margin: 12px;">
+			<img src="{{url('images/firebase.png')}}" alt="Logo Firebase" title="Firebase" style="max-width: 15%; margin: 12px;">
+			<img src="{{url('images/ionic.png')}}" alt="Logo Ionic" title="Ionic" style="max-width: 15%; margin: 12px;">
+			<img src="{{url('images/nodejs.jpg')}}" alt="Logo Node.js" title="Node.js" style="max-width: 15%; margin: 12px;">
 	</div>
 
 </div>

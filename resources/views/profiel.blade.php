@@ -10,36 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="icon" href="{{url('images/portfolio.ico')}}" type="image/icon type">
-    <style>
-    .carousel-inner img{
-        width:  50%;
-        height: 50%; 
-    }
-    .carousel-indicators li {
-        background-color: #999;
-        background-color: rgba(70, 70, 70, 0.25);
-    }
-    .carousel-indicators .active {
-        background-color: #444;
-    }
-    .controls-top {
-        color:  #999;
-        background-color:  rgba(70, 70, 70, 0.25);
-    }
-    .carousel-item{
-        background-color:  white;
-        height:  610px;
-    }
-    @media screen and (max-width: 520px){
-        .carousel-item{
-            height:  720px;
-        }
-    }
-    /* .wraparound {
-    background: rgb(238,174,226);
-background: radial-gradient(circle, rgba(238,174,226,1) 0%, rgba(148,233,228,1) 100%);
-    }*/
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{url('css/profiel.css')}}">
 </head>
 <body>
 

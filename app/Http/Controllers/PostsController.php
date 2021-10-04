@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post; 
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -35,10 +36,16 @@ class PostsController extends Controller
 
     public function removemessage($id){
         
-        $post = new Post(); 
-        $data = $post->find($id); 
-        $data->delete(); 
+        if (Auth::check()){$logged_in = 1; $usermail = Auth::user()->email; $user = Auth::user()->name;}else{$logged_in = 0;}
 
-        return redirect('logboek'); 
+        if($logged_in == 1 && $usermail == "test@mail.com"){
+            $post = new Post(); 
+            $data = $post->find($id); 
+            $data->delete(); 
+
+            return redirect('logboek'); 
+        } else{
+            return redirect('logboek'); 
+        }
     }
 }
