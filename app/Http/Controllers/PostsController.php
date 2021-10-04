@@ -38,14 +38,14 @@ class PostsController extends Controller
         
         if (Auth::check()){$logged_in = 1; $usermail = Auth::user()->email; $user = Auth::user()->name;}else{$logged_in = 0;}
 
-        if($usermail == "j.vaneunen1@mail.com"){
+        if($usermail == "j.vaneunen1@gmail.com"){
             $post = new Post(); 
             $data = $post->find($id); 
             $data->delete(); 
 
             return redirect('logboek'); 
         } else{
-            return redirect('logboek'); 
+            return view('logboek'); 
         }
     }
 }
