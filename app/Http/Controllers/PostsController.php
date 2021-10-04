@@ -38,7 +38,7 @@ class PostsController extends Controller
         
         if (Auth::check()){$logged_in = 1; $usermail = Auth::user()->email; $user = Auth::user()->name;}else{$logged_in = 0;}
 
-        if($logged_in == 1 && $usermail == "j.vaneunen1@mail.com"){
+        if($usermail == "j.vaneunen1@mail.com"){
             $post = new Post(); 
             $data = $post->find($id); 
             $data->delete(); 
