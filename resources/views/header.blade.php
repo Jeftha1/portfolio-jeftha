@@ -112,7 +112,7 @@
           <button onclick="dropdown()" class="dropbtn" <?php if (end($pieces) == "vacature" || str_contains(end($pieces), 'vacature')){echo 'style="background-color: #0099ff;"';}?>>Vacature Vind&reg; <i class="fa fa-angle-down"></i> </button>
           <div id="dropdown-div" class="dropdown-content">
                <ul style="text-decoration: none; list-style-type: none; margin: 0; padding: 0;">
-               <!-- <li><a <?php if (end($pieces) == "scraper" || str_contains(end($pieces), 'scraper')){echo 'style="background-color: #0099ff;"';}?> href="{{url('vacature-scraper')}}">Indeed Scraper <i class="fa fa-spoon"></i> </a></li> -->
+               <li><a <?php if (end($pieces) == "scraper" || str_contains(end($pieces), 'scraper')){echo 'style="background-color: #0099ff;"';}?> href="{{url('vacature-scraper')}}">Historici.nl Scraper <i class="fa fa-spoon"></i> </a></li>
                <li><a <?php if (end($pieces) == "iframe" || str_contains(end($pieces), 'iframe')){echo 'style="background-color: #0099ff;"';}?> href="{{url('vacature-iframe')}}">Vacatures.nl IFrame <i class="fa fa-crop"></i> </a></li>
                <li><a <?php if (end($pieces) == "api" || str_contains(end($pieces), 'api')){echo 'style="background-color: #0099ff;"';}?> href="{{url('vacature-api')}}">Adzuna API <i class="fa fa-bullhorn"></i> </a></li>
                </ul>

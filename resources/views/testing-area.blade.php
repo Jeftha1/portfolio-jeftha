@@ -10,30 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="icon" href="{{url('images/portfolio.ico')}}" type="image/icon type">
-    <style>
-    body{
-        display:  flex;
-        flex-direction:  column;
-    }
-    footer{
-        margin-top:  auto;
-    }
-    @media screen and (max-width:  820px){
-        .card1 {
-        width:  100%; 
-        float:  none;
-        margin-bottom:  20px;
-        }
-        .container1 {
-            width:  100%;
-            float:  none;
-        }
-        .cardcontainer{
-            width:  100%; 
-            float:  none;
-        }
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{url('css/api.css')}}">
 </head>
 <body>
 
@@ -43,42 +20,23 @@
 
 @include('header')
 
-<?php 
-require('../simple_html_dom.php');
-
-//Verwerk zoekopdracht van user
-if(isset($_GET['zoekopdracht'])){
-    $zoekopdracht = $_GET['zoekopdracht']; 
-}else{
-    $zoekopdracht = 'Geschiedenis'; 
-}
-if(isset($_GET['zoekperiode'])){
-    $zoekperiode = $_GET['zoekperiode']; 
-}else{
-    $zoekperiode = 1; 
-}
-
-$url = "https://www.historici.nl/vacatures/";
-
-//Voeg de $zoekopdracht toe aan de link
-$html = file_get_html($url); 
-
-//Vind de vacatures div op de website van indeed
-$items = $html->find('section[class="huc-frame-items huc-cards"]',0); 
-
-?>
-
-<p>Total: {{count($items->find('div[class="huc-item huc-card"]'))}}
-
 <div style="margin: auto; width: 85%; height: auto;">
+<h2 style="text-align: center;">Er zijn {{count($items->find('div[class="huc-item huc-card"]'))}} vacatures gevonden op <a href="https://www.historici.nl/vacatures/" target="_blank">Historici.nl</a></h2>
 @if(isset($items))
     @foreach($items->find('div[class="huc-item huc-card"]') as $item)
         <div class="card1">
-        <div class="container1" style="height: 160px !important; overflow-y: auto !important;">
+        <div class="container1" style="height: 180px !important; overflow-y: auto !important;">
+            <?php 
+                $title = $item->find('div[class="huc-card-title"]', 0);
+                $deadline = $item->find('div[class="huc-card-footer"]',0);
+                $location = $item->innertext;
+                $location_array = explode(" ", $location);
+                $link = $item->find('a',0);
+            ?>
             <br>
-        <?php
-        echo $item;
-        ?>
+            <h4><a href="<?php echo $link->href;?>" target="_blank"><?php echo $title->plaintext; ?></a></h4>
+            <h5><?php echo $location_array[1]; ?></h5>
+            <p><?php echo $deadline->plaintext; ?></p>
         </div>
     </div>
     @endforeach
@@ -100,8 +58,9 @@ $items = $html->find('section[class="huc-frame-items huc-cards"]',0);
 @include('footer')
 </div>
 
+<!-- script om ongewenste elementen uit de scrape resultaten te halen -->
 <script>
-    
+
     var divs = document.getElementsByClassName('huc-card-body'); 
 
     for(var i = 0; i < divs.length; i++){

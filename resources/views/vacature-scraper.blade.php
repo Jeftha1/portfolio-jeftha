@@ -10,119 +10,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="icon" href="{{url('images/portfolio.ico')}}" type="image/icon type">
-    <style>
-    body{
-        display:  flex;
-        flex-direction:  column;
-    }
-    footer{
-        margin-top:  auto;
-    }
-    @media screen and (max-width:  820px){
-        .card1 {
-        width:  100%; 
-        float:  none;
-        margin-bottom:  20px;
-        }
-        .container1 {
-            width:  100%;
-            float:  none;
-        }
-        .cardcontainer{
-            width:  100%; 
-            float:  none;
-        }
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{url('css/api.css')}}">
 </head>
 <body>
 
 <div class="header">
-	<h1>Vacature Vind&reg; Scraper</h1>
+    <h1>Vacature Vind&reg; Scraper</h1>
 </div>
 
 @include('header')
 
-<?php 
-require('../simple_html_dom.php');
-
-//Verwerk zoekopdracht van user
-if(isset($_GET['zoekopdracht'])){
-    $zoekopdracht = $_GET['zoekopdracht']; 
-}else{
-    $zoekopdracht = 'Geschiedenis'; 
-}
-if(isset($_GET['zoekperiode'])){
-    $zoekperiode = $_GET['zoekperiode']; 
-}else{
-    $zoekperiode = 1; 
-}
-
-$url = "https://nl.indeed.com/jobs?q=$zoekopdracht&l=Emmeloord&radius=50&fromage=$zoekperiode";
-
-//Voeg de $zoekopdracht toe aan de link
-$html = file_get_html($url); 
-
-//Vind de vacatures div op de website van indeed
-$item = $html->find('div[id="mosaic-provider-jobcards"]',0); 
-
-//Als er binnen de gestelde radius geen vacatures te vinden zijn, maar net daarbuiten wel, geeft Indeed deze vacatures weer. Om dit te voorkomen sla ik hier de boodschap daarvoor op en gebruik ik die var in onderstaande if-statement. 
-$outside_radius = $html->find('div[id="original_radius_result"]',0); 
-?>
-
 <div style="margin: auto; width: 85%; height: auto;">
-    <h2 style="text-align: center;">Vacatures {{$zoekopdracht}} afgelopen <?php if ($zoekperiode >1){echo $zoekperiode." dagen";}else{echo 'dag';}?></h2>
-    <h5 style="text-align: center;">Deze pagina toont een aantal vacatures die gevonden zijn met een scraper op Indeed.com</h5>
-    <h6 style="text-align: center; color: red;">Via de link 'Bekijk vacature' krijg je een zoekresultaat op basis van die vacature te zien op Indeed.com. <br> De links naar de specifieke vacatures werken namelijk nog niet.<br>Het design van deze pagina moet nog aangepast worden.</h6>
-    <p style="text-align: center;">Zoekopdracht parameters: Emmeloord, <50km radius. Link: <a href="https://nl.indeed.com/jobs?q=&l=Emmeloord&radius=50&fromage=1" target="_blank">Indeed.com.</a></p>
-
-    <form action="#" name="keyword" style="text-align: center;">
-        <label for="zoekopdracht">Zoekopdracht: </label>
-        <select id="zoekopdracht" name="zoekopdracht">
-            <option value="" selected disabled>  Kies een richting</option>
-            <option value="Geschiedenis">  Geschiedenis</option>
-            <option value="Historicus" >  Historicus</option>
-            <option value="Historie" >  Historie</option>
-            <option value="Archief" >  Archief</option>
-            <option value="Trainee" >  Trainee</option>
-            <option value="Museum" >  Museum</option>
-            <option value="Schrijven" >  Schrijven</option>
-            <option value="Cultuur" >  Cultuur</option>
-            <option value="Erfgoed" >  Erfgoed</option>
-            <option value="Redacteur" >  Redacteur</option>
-            <option value="Editor" >  Editor</option>
-            <option value="Conservator" >  Conservator</option>
-            <option value="Bibliotheek" >  Bibliotheek</option>
-            <option value="Informatie" >  Informatie</option>
-            <option value="Bidwriter" >  Bidwriter</option>
-            <option value="Communicatie" >  Communicatie</option>
-            <option value="Tekstschrijver" >  Tekstschrijver</option>
-            <option value="PHP">  PHP</option>
-        </select>
-        <label for="zoekperiode">Plaatsingsdatum: </label>
-        <select id="zoekperiode" name="zoekperiode">
-            <option value="" selected disabled> Kies een periode</option>
-            <option value="1"> 1 Dag</option>
-            <option value="3"> 3 Dagen</option>
-            <option value="7"> 7 Dagen</option>
-        </select>
-        <input type="submit"><br><br>
-    </form>
-@if(isset($item) && !(isset($outside_radius)))
-    @foreach($item->find('div[class="slider_item"]') as $slider_item)
+<h2 style="text-align: center;">Er zijn {{count($items->find('div[class="huc-item huc-card"]'))}} vacatures voor historici gevonden op <a href="https://www.historici.nl/vacatures/" target="_blank">Historici.nl</a></h2>
+@if(isset($items))
+    @foreach($items->find('div[class="huc-item huc-card"]') as $item)
         <div class="card1">
-        <div class="container1" style="height: 320px !important; overflow-y: auto !important;">
-            
-        <?php
-        $titlefull = $slider_item->find('div[class="new topLeft holisticNewBlue desktop"]', 0)->next_sibling()->plaintext;
-        $title = str_replace(" ", "+", $titlefull);  
-        $locatie = $slider_item->find('div[class="companyLocation"]',0)->plaintext; 
-        $bedrijf = $slider_item->find('span[class="companyName"]',0)->plaintext;
-        echo $slider_item;
-        ?>
-
-        <!-- de links werken nog niet, dus heb ik deze oplossing toegepast waarbij de links dynamisch worden gevonden. Dit gaat meestal goed, maar het nadeel is dat het onnauwkeurig is. -->
-        <p><a href="https://nl.indeed.com/jobs?q={{$title}}+{{$bedrijf}}&l={{$locatie}}&fromage=1" target="_blank">Bekijk vacature</a></p>
+        <div class="container1" style="height: 180px !important; overflow-y: auto !important;">
+            <?php 
+                $title = $item->find('div[class="huc-card-title"]', 0);
+                $deadline = $item->find('div[class="huc-card-footer"]',0);
+                $location = $item->innertext;
+                $location_array = explode(" ", $location);
+                $link = $item->find('a',0);
+            ?>
+            <br>
+            <h4><a href="<?php echo $link->href;?>" target="_blank"><?php echo $title->plaintext; ?></a></h4>
+            <h5><?php echo $location_array[1]; ?></h5>
+            <p><?php echo $deadline->plaintext; ?></p>
         </div>
     </div>
     @endforeach
@@ -144,28 +58,15 @@ $outside_radius = $html->find('div[id="original_radius_result"]',0);
 @include('footer')
 </div>
 
-<!-- JS om links en ongewenste elementen die in de scraper resultaten staan uit te schakelen en niet weer te geven -->
+<!-- script om ongewenste elementen uit de scrape resultaten te halen -->
 <script>
-    window.onload = function() {
-    var anchors = document.getElementsByTagName("a");
-    for (var i = 0; i < anchors.length; i++) {
-        if(anchors[i].classList.contains('turnstileLink') || anchors[i].classList.contains('ratingLink') || anchors[i].classList.contains('more_loc')){
-            anchors[i].onclick = function() {return false;};
-            anchors[i].setAttribute('style', 'pointer-events: none'); 
-        }
+
+    var divs = document.getElementsByClassName('huc-card-body'); 
+
+    for(var i = 0; i < divs.length; i++){
+        divs[i].style.display = 'none'; 
     }
-};
 
-var divs = document.getElementsByClassName('tab-container'); 
-var meer = document.getElementsByClassName('sl resultLink more_links_button'); 
-
-for(var i = 0; i < divs.length; i++){
-    divs[i].style.display = 'none'; 
-}
-
-for(var i = 0; i < meer.length; i++){
-    meer[i].style.display = 'none';
-}
 </script>
 
 </body>
